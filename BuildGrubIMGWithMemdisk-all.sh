@@ -145,24 +145,18 @@ fi
 
 if [ "$select1" = 1 ]
 then
-grub-mkimage \
--O "$platform" \
--o "$workdir/grubx64.efi" \
--p "/EFI/$boot_id" \
--m "$workdir/memdisk.tar" \
--c "$workdir/grub-bootstrap.cfg" \
---sbat '/usr/share/grub/sbat.csv' \
-$MODULES
+_memdisk=memdisk.tar
 else
+_memdisk=memdisk.squashfs
+fi
 grub-mkimage \
 -O "$platform" \
 -o "$workdir/grubx64.efi" \
 -p "/EFI/$boot_id" \
--m "$workdir/memdisk.squashfs" \
+-m "$workdir/$_memdisk" \
 -c "$workdir/grub-bootstrap.cfg" \
 --sbat '/usr/share/grub/sbat.csv' \
 $MODULES
-fi
 
 printf '%b' "${_wrotedir} ${TARGET_EFI}\n"
 sudo cp "$workdir/grubx64.efi" "$TARGET_EFI"
