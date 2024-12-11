@@ -7,7 +7,7 @@ platform=x86_64-efi
 # 1a2s3d4f1(https://github.com/1a2s3d4f1)编写
 
 l10n_en_us() {
-_title='\033[1;36m ***GRUB Secure Boot Support with font loading creating scrips*** \n *See: https://bbs.archlinux.org/viewtopic.php?id=282076 \n https://sources.debian.org/src/grub2/2.06-2/debian/build-efi-images/\033[0m'
+_title='\033[1;36m ***GRUB Secure Boot Support with font loading creating scrips*** \n *See:https://www.bilibili.com/video/BV1PCzNYtE4G \n https://sources.debian.org/src/grub2/2.06-2/debian/build-efi-images/\033[0m'
 _gpg_directory_exist='\033[1;33m[Warn] exist dircetory grub-with-memdisk, skip creating folder\033[0m'
 _dir4root='\033[1;36mPlease set the block device name of disk partition where the /boot directory is located（e.g sda1）:\033[0m/dev/'
 _dir4efi='\033[1;36mSet the target directory of installing grub image (e.g. /boot/esp/EFI/BOOT) :\033[0m'
@@ -24,7 +24,7 @@ _selectip2='Do you want to use auto detectiong /boot partation feature?\n( 1.Aut
 }
 
 l10n_zh_cn() {
-_title='\033[1;36m ***内存盘携带字体文件的的grub生成脚本*** \n *参考： https://bbs.archlinux.org/viewtopic.php?id=282076 \n https://sources.debian.org/src/grub2/2.06-2/debian/build-efi-images/ \033[0m'
+_title='\033[1;36m ***内存盘携带字体文件的的grub生成脚本*** \n *参考：https://www.bilibili.com/video/BV1PCzNYtE4G \n https://sources.debian.org/src/grub2/2.06-2/debian/build-efi-images/ \033[0m'
 _gpg_directory_exist='\033[1;33m[警告] grub-with-memdisk目录已存在，跳过创建目录过程\033[0m'
 _dir4root='\033[1;36m请输入/boot目录所在硬盘分区的块设备名（例如sda1）:\033[0m/dev/'
 _dir4efi='\033[1;36m输入GRUB镜像安装位置（例如/boot/EFI分区/EFI/BOOT：\033[0m'
