@@ -4,6 +4,7 @@
 > note: jq and wofi are needed
 
 ![minimize-gif](imgs/hypr-minimize.gif)
+
 A shell script used to minimize or recover a window.
 
 Usage: hypr-minimize.sh \<options\> can be
