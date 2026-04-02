@@ -1,7 +1,11 @@
 # ShScripts
 
-工具脚本被移动到[这里](tools/tools.md)
+English | 中文（[简体](README_zh.md)）
 
-点[这里](hypr-scripts/information.md)查看在 Hyprland 使用的 shell 脚本。
+## Introduction
+
+This repository stronges some shell scripts that used to operate something easily. Like create grub image with font file or extent operation with hyprland.
+
+Tool scripts at [here](tools/tools.md)
 
 Click [here](hypr-scripts/information.md) for information of scripts that used on hyprland.
