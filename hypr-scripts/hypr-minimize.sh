@@ -3,8 +3,7 @@ _get_ws_status () {
   _ws_status=$(hyprctl workspaces -j | jq -r '.[] | select(.name == "special:minimized" )| .name');
 }
 _minimize_window () {
-  target_win_addr=$(hyprctl activewindow -j | jq -r '.address');
-  hyprctl dispatch  movetoworkspacesilent special:minimized,address:"$target_win_addr";
+  hyprctl dispatch hl.dsp.window.move\('{ workspace = "special:minimized", follow = false }'\);
 }
 _recover_window () {
   _get_ws_status;
@@ -16,7 +15,8 @@ _recover_window () {
   then win_addr=$(hyprctl clients -j | jq -r '.[] | select(.workspace.name == "special:minimized") | "\(.address) \(.title)@\(.class)"'|wofi --show dmenu -i -M fuzzy |cut -f1 -d\ |head -1);
   c_workspace_id=$(hyprctl activeworkspace -j | jq '.id');
   if echo "$win_addr" | grep -n ^0x >/dev/null
-  then hyprctl dispatch movetoworkspace "$c_workspace_id",address:"$win_addr";
+  then
+  hyprctl dispatch hl.dsp.window.move\(\{workspace = "$c_workspace_id", follow = true, window = \"address:"$win_addr"\"\}\)
   fi
   else echo "Minimized window not found" | wofi --show dmenu -i -M fuzzy;
   fi
