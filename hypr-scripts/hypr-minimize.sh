@@ -5,7 +5,7 @@ _get_ws_status () {
 _minimize_window () {
   hyprctl dispatch hl.dsp.window.move\('{ workspace = "special:minimized", follow = false }'\);
 }
-_recover_window () {
+_restore_window () {
   _get_ws_status;
   if [ $(pgrep wofi) ]
       then kill -TERM $(pgrep wofi)
@@ -31,7 +31,7 @@ _minispace_stat () {
 }
   case $1 in
     -m*) _minimize_window;;
-    -r*) _recover_window;;
+    -r*) _restore_window;;
     -g*) _minispace_stat;;
     *)printf "Usage: hypr-minimize.sh <option> \n-m minimize an activite window \n-r open wofi menu for recovering minimized window \n-g get the status of minimize workspace\n";;
   esac
